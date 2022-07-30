@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
@@ -8,12 +7,19 @@ module.exports = {
     devServer: {
         static: './dist',
         hot: true,
+        port: 3000
     },
     output: {
+        filename: 'bundle.js',
         path: path.resolve(__dirname, "dist"),
-        clean: true,
         publicPath: '/',
-        filename: 'index_bundle.js',
     },
-    plugins: [new HtmlWebpackPlugin()],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
 };
