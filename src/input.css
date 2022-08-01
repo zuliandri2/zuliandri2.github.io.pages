@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ml-2\/12 {
+    margin-left: 16.666667%;
+}
+
+.ml-1\/12 {
+    margin-left: 8.333333%;
+}
+.border-b-solid {
+    border-bottom-style: solid;
+}
+
+.border-b-border {
+    border-bottom-width: 1px;
+}
+
+.border-b-thin {
+    border-bottom-width: thin;
+}
+
+.before\:border-l-border:before {
+    border-left-width: 1px;
+}
+
+.before\:border-l-solid:before {
+    border-left-style: solid;
+}
+
+.before\:border-l-neutral-200:before {
+    --tw-border-opacity: 1;
+    border-left-color: rgb(229 229 229 / var(--tw-border-opacity));
+}
+
+.before\:border-t-border:before {
+    border-top-width: 1px;
+}
+
+.before\:border-t-solid:before {
+    border-top-style: solid;
+}
+
+.before\:border-t-neutral-200:before {
+    --tw-border-opacity: 1;
+    border-top-color: rgb(229 229 229 / var(--tw-border-opacity));
+}
+
+.border-r-neutral-200 {
+    --tw-border-opacity: 1;
+    border-right-color: rgb(229 229 229 / var(--tw-border-opacity));
+}
+
+.border-r-solid {
+    border-right-style: solid;
+}
+
+.border-r-thin {
+    border-right-width: thin;
+}
+
+.w-25\% {
+    width: 25%;
+}
+
+.w-1\/12 div span {
+    display: none;
+}
+
+.w-1\/12 div i.fa {
+    padding: 0px;
+}
+
+.w-1\/12 div {
+    text-align: center;
+}
