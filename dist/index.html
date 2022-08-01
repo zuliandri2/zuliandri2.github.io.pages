@@ -4,21 +4,30 @@
     <meta charset="utf-8">
     <title>ZULIANDRI Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="./styles.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="width-20% pos-fixed top:0px left:0px height:100%" style="background-color: red"></div>
-    <div class="width-80% margin-left:20% padding:10px border-b-neutral-200 border-b-solid border-b-thin box-shadow-header">
-      <a class="display:inline-block"><i class="fa fa-bars fa-2x text-neutral-400 text-neutral-600"></i></a>
-      <a class="float:right width-10%">
-        <img src="./matthew.png" class="width:35px heigh:35px border-radius:5rem">
-        <div class="float:left width:max-content padding-left:0px list-style-type:none">
-          <div class="word-break:break-all">Menu 1 asasasas asasasas asasasas</div>
-          <div class="word-break:break-all">Menu 2 asasasas asasasas asasasas</div>
-          <div class="word-break:break-all">Menu 3 asasasas asasasas asasasas</div>
-          <div class="word-break:break-all">Menu 4</div>
-        </div>
+    <div class="w-2/12 fixed top-0 left-0 h-full border-r-neutral-200 border-r-solid border-r-thin" id="navigations-menus">
+      <div class="p-4 text-center border-b-neutral-200 border-b-solid border-b-thin">Logo</div>
+      <div href="#" class="hover:bg-neutral-200 py-2 border-b-neutral-200 border-b-solid border-b-thin cursor-pointer"><i class="w-25% fa fa-home pr-3 pl-5" aria-hidden="true"></i><span>Home</span></div>
+      <div class="hover:bg-neutral-200 py-2 border-b-neutral-200 border-b-solid border-b-thin cursor-pointer"><i class="w-25% fa fa-users pr-3 pl-5" aria-hidden="true"></i><span>Users</span></div>
+      <div class="hover:bg-neutral-200 py-2 border-b-neutral-200 border-b-solid border-b-thin cursor-pointer"><i class="w-25% pr-3 pl-5 fa fa-map-marker" aria-hidden="true"></i><span>Map</span></div>
+      <div class="hover:bg-neutral-200 py-2 border-b-neutral-200 border-b-solid border-b-thin cursor-pointer"><i class="w-25% pr-3 pl-5 fa fa-font-awesome" aria-hidden="true"></i><span>Font Awesome</span></div>
+    </div>
+    <div class="w-10/12 ml-2/12 p-2.5 border-b-neutral-200 border-b-solid border-b-thin shadow-[10px_2px_10px_rgb(229,229,229)]" id="header-menu">
+      <a class="inline-block cursor-pointer"><i class="fa fa-bars fa-1x text-neutral-400 text-neutral-600 mt-2.5 mb-2.5" id="toggle-btn-nav-menus"></i></a>
+      <a class="float-right w-2/12 text-center">
+        <img src="./matthew.png" class="w-[35px] h-[35px] rounded-[5rem] cursor-pointer float-right mb-2.5" id="img-profile">
+        <ul class="clear-right hidden relative pl-0 list-none left:-40% mb-0 border-solid border border-neutral-200 bg-white text-left before:w-[13px] before:h-[13px] before:border-l-border before:border-l-solid before:border-l-neutral-200 before:absolute before:border-t-border before:border-t-solid before:border-t-neutral-200 before:rotate-45 before:bg-white before:top-[-7px] before:right-2.5 before:content[\'\']" id="menus">
+          <li class="cursor-default text-center border-b-thin border-b-solid border-b-neutral-200 py-[15px] cursor-normal">
+            <div class="font-bold">Joen The Goes</div>
+            <div>Asistant Manager<div>
+          </li>
+          <li class="hover:bg-neutral-200 cursor-pointer break-all border-b-solid border-b-border border-b-neutral-200 py-2 p-[5px]"><i class="mx-4 fa fa-cog" aria-hidden="true"></i>Settings</li>
+          <li class="hover:bg-neutral-200 cursor-pointer break-all border-b-solid border-b-border border-b-neutral-200 py-2 p-[5px]"><i class="mx-4 fa fa-envelope" aria-hidden="true"></i>Inbox</li>
+          <li class="hover:bg-neutral-200 cursor-pointer break-all border-b-solid border-b-border border-b-neutral-200 py-2 p-[5px]"><i class="mx-4 fa fa-user" aria-hidden="true"></i>Profile</li>
+          <li class="hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]"><i class="mx-4 fa fa-lock" aria-hidden="true"></i>Logout</li>
+        </ul>
       </a>
     </div>
     <script src="bundle.js"></script>
