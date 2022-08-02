@@ -68,10 +68,51 @@
     display: none;
 }
 
-.w-1\/12 div i.fa {
+.w-1\/12 div > i.fa {
     padding: 0px;
 }
 
 .w-1\/12 div {
     text-align: center;
+}
+
+.menus .menu-items {
+    display: none;
+}
+
+.menus div:first-child:after {
+    transform: rotate(45deg);
+    transition: transform .2s ease-in-out;
+}
+
+.menus:hover div:first-child:after {
+    transform: rotate(-45deg);
+}
+
+.menus:hover .menu-items {
+    display: inline-block;
+    animation: showup .2s;
+}
+
+.hover\:tracking-widest:hover > .tracking-normal {
+    letter-spacing: normal;
+}
+
+#menus.block {
+    animation: showup .3s;
+}
+
+@keyframes showup {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
