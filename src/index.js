@@ -1,4 +1,7 @@
-let img_profile = document.getElementById("img-profile"), menus = document.getElementById("menus"), btn_toggle_menu_nav = document.getElementById("toggle-btn-nav-menus"), nav_menus = document.getElementById("navigations-menus"), header_menu = document.getElementById("header-menu");
+import { chart1, chart2, chart3, chart4 } from './chartStyles';
+
+
+let img_profile = document.getElementById("img-profile"), menus = document.getElementById("menus"), btn_toggle_menu_nav = document.getElementById("toggle-btn-nav-menus"), nav_menus = document.getElementById("navigations-menus"), header_menu = document.getElementById("header-menu"), side_content = document.getElementById("side-content");
 
 img_profile.addEventListener("click", function () {
     if (menus.classList.contains("hidden")) {
@@ -18,19 +21,24 @@ document.addEventListener('click', function (e) {
 }, false);
 
 btn_toggle_menu_nav.addEventListener("click", function () {
-    if (nav_menus.classList.contains("w-2/12")) {
-        nav_menus.classList.remove("w-2/12");
-        if (!nav_menus.classList.contains("w-1/12")) nav_menus.classList.add("w-1/12");
-        if (header_menu.classList.contains("w-10/12")) header_menu.classList.remove("w-10/12");
-        if (!header_menu.classList.contains("w-11/12")) header_menu.classList.add("w-11/12");
-        if (header_menu.classList.contains("ml-2/12")) header_menu.classList.remove("ml-2/12");
-        if (!header_menu.classList.contains("ml-1/12")) header_menu.classList.add("ml-1/12");
+    if (nav_menus.classList.contains("w-[15%]")) {
+        nav_menus.classList.remove("w-[15%]");
+        if (!nav_menus.classList.contains("w-[10%]")) nav_menus.classList.add("w-[10%]");
+        if (side_content.classList.contains("ml-[15%]")) side_content.classList.remove("ml-[15%]");
+        if (!side_content.classList.contains("ml-[10%]")) side_content.classList.add("ml-[10%]");
+        if (header_menu.classList.contains("w-[85%]")) header_menu.classList.remove("w-[85%]");
+        if (!header_menu.classList.contains("w-[90%]")) header_menu.classList.add("w-[90%]");
     } else {
-        nav_menus.classList.add("w-2/12");
-        if (nav_menus.classList.contains("w-1/12")) nav_menus.classList.remove("w-1/12");
-        if (header_menu.classList.contains("w-11/12")) header_menu.classList.remove("w-11/12");
-        if (!header_menu.classList.contains("w-10/12")) header_menu.classList.add("w-10/12");
-        if (header_menu.classList.contains("ml-1/12")) header_menu.classList.remove("ml-1/12");
-        if (!header_menu.classList.contains("ml-2/12")) header_menu.classList.add("ml-2/12");
+        nav_menus.classList.add("w-[15%]");
+        if (nav_menus.classList.contains("w-[10%]")) nav_menus.classList.remove("w-[10%]");
+        if (side_content.classList.contains("ml-[10%]")) side_content.classList.remove("ml-[10%]");
+        if (!side_content.classList.contains("ml-[15%]")) side_content.classList.add("ml-[15%]");
+        if (header_menu.classList.contains("w-[90%]")) header_menu.classList.remove("w-[90%]");
+        if (!header_menu.classList.contains("w-[85%]")) header_menu.classList.add("w-[85%]");
     }
 });
+
+chart1();
+chart2();
+chart3();
+chart4();

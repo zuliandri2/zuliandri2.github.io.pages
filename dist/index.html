@@ -1,72 +1,113 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>ZULIANDRI Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link href="./styles.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>ZULIANDRI Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="./styles.css" rel="stylesheet">
 </head>
 <body class="text-sm text-gray-700">
-    <div class="w-2/12 fixed top-0 left-0 h-full border-r-neutral-200 border-r-solid border-r-thin bg-gradient-to-r from-sky-500 to-blue-700 font-medium" id="navigations-menus">
-      <div class="p-[1.08rem] text-center">Logo</div>
-      <div class="menus cursor-pointer hover:tracking-widest duration-500 ease-in-out hover:bg-neutral-200">
+<div class="w-[15%] fixed top-0 left-0 h-full bg-gradient-to-r from-sky-500 to-blue-700 font-medium"
+     id="navigations-menus">
+    <div class="p-[1.08rem] text-center">Logo</div>
+    <div class="menus cursor-pointer hover:tracking-widest duration-500 ease-in-out hover:bg-neutral-200">
         <div class="py-2 inline-block pl-4 w-full">
-          <i class="fa fa-home fa-fw" aria-hidden="true"></i>
-          <span class="pl-3">Home</span>
+            <i class="fa fa-home fa-fw" aria-hidden="true"></i>
+            <span class="pl-3">Home</span>
         </div>
-      </div>
-      <div class=" cursor-pointer menus hover:tracking-widest duration-500 ease-in-out hover:bg-neutral-200">
+    </div>
+    <div class=" cursor-pointer menus hover:tracking-widest duration-500 ease-in-out hover:bg-neutral-200">
         <div class="py-2 inline-block pl-4 w-full after:float-right after:rotate-45 after:bg-transparent after:w-2.5 after:h-2.5 after:border-r after:border-b after:border-solid after:border-r-[rgb(106,106,106)] after:border-b-[rgb(106,106,106)] pr-2.5 after:mt-1">
-          <i class="fa fa-users fa-fw" aria-hidden="true"></i>
-          <span class="pl-3">Users</span>
+            <i class="fa fa-users fa-fw" aria-hidden="true"></i>
+            <span class="pl-3">Users</span>
         </div>
         <div class="fixed menu-items">
             <ul class="text-left bg-gradient-to-r from-sky-500 to-blue-700 rounded-tr rounded-br">
-              <li class="hover:bg-neutral-200 cursor-pointer break-all px-5 py-2 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out">
-                <i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i><span class="pl-3">Create</span>
-              </li>
-              <li class="hover:bg-neutral-200 cursor-pointer break-all px-5 py-2 hover:tracking-widest tracking-normal duration-500 ease-in-out">
-                <i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i><span class="pl-3">Edit</span>
-              </li>
-              <li class="hover:bg-neutral-200 cursor-pointer break-all px-5 py-2 rounded-br hover:tracking-widest tracking-normal duration-500 ease-in-out">
-                <i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i><span class="pl-3">Delete</span>
-              </li>
-          </ul>
+                <li class="hover:bg-neutral-200 cursor-pointer break-all px-5 py-2 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out">
+                    <i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i><span class="pl-3">Create</span>
+                </li>
+                <li class="hover:bg-neutral-200 cursor-pointer break-all px-5 py-2 hover:tracking-widest tracking-normal duration-500 ease-in-out">
+                    <i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i><span class="pl-3">Edit</span>
+                </li>
+                <li class="hover:bg-neutral-200 cursor-pointer break-all px-5 py-2 rounded-br hover:tracking-widest tracking-normal duration-500 ease-in-out">
+                    <i class="fa fa-ellipsis-h fa-fw" aria-hidden="true"></i><span class="pl-3">Delete</span>
+                </li>
+            </ul>
         </div>
-      </div>
-      <div class="hover:bg-neutral-200  menus cursor-pointer hover:tracking-widest duration-500 ease-in-out">
-        <div class="py-2 inline-block pl-4 w-full">
-          <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
-          <span class="pl-3">Map</span>
-        </div>
-      </div>
-      <div class="hover:bg-neutral-200 menus cursor-pointer hover:tracking-widest duration-500 ease-in-out">
-        <div class="py-2 inline-block pl-4 w-full">
-          <i class="fa fa-font-awesome fa-fw" aria-hidden="true"></i>
-          <span class="pl-3">Font Awesome</span>
-        </div>
-      </div>
     </div>
-    <div class="w-10/12 ml-2/12" id="header-menu">
-      <div class="p-2.5 border-b-neutral-200 border-b-solid border-b-thin shadow-[10px_2px_10px_rgb(229,229,229)] bg-gradient-to-r from-sky-500 to-blue-700">
-        <a class="inline-block cursor-pointer"><i class="fa fa-bars fa-1x text-neutral-400 text-neutral-600 mt-2.5 mb-2.5" id="toggle-btn-nav-menus"></i></a>
-        <a class="float-right w-2/12 text-center">
-          <img src="./matthew.png" class="w-[35px] h-[35px] rounded-[5rem] cursor-pointer float-right mb-2" id="img-profile">
-          <ul class="font-medium bg-gradient-to-r from-sky-500 to-blue-700 rounded clear-right hidden relative pl-0 list-none left:-40% mb-0 text-left" id="menus">
-            <li class="cursor-default text-center py-[15px] cursor-normal">
-              <div class="font-bold">Joen The Goes</div>
-              <div>Asistant Manager<div>
-            </li>
-            <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]"><i class="mx-4 fa fa-cog" aria-hidden="true"></i>Settings</li>
-            <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]"><i class="mx-4 fa fa-envelope" aria-hidden="true"></i>Inbox</li>
-            <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]"><i class="mx-4 fa fa-user" aria-hidden="true"></i>Profile</li>
-            <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]"><i class="mx-4 fa fa-lock" aria-hidden="true"></i>Logout</li>
-          </ul>
+    <div class="hover:bg-neutral-200  menus cursor-pointer hover:tracking-widest duration-500 ease-in-out">
+        <div class="py-2 inline-block pl-4 w-full">
+            <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+            <span class="pl-3">Map</span>
+        </div>
+    </div>
+    <div class="hover:bg-neutral-200 menus cursor-pointer hover:tracking-widest duration-500 ease-in-out">
+        <div class="py-2 inline-block pl-4 w-full">
+            <i class="fa fa-font-awesome fa-fw" aria-hidden="true"></i>
+            <span class="pl-3">Font Awesome</span>
+        </div>
+    </div>
+</div>
+<div class="ml-[15%]" id="side-content">
+    <div id="header-menu" class="fixed w-[85%] p-2.5 border-b-neutral-200 border-b-solid border-b-thin shadow-[10px_2px_10px_rgb(229,229,229)] bg-gradient-to-r from-sky-500 to-blue-700">
+        <a class="inline-block cursor-pointer"><i
+                class="fa fa-bars fa-1x text-neutral-400 text-neutral-600 mt-2.5 mb-2.5" id="toggle-btn-nav-menus"></i></a>
+        <a class="w-2/12 text-center fixed right-3.5">
+            <img src="./matthew.png" class="w-[35px] h-[35px] rounded-[5rem] cursor-pointer float-right mb-2"
+                 id="img-profile">
+            <ul class="font-medium bg-gradient-to-r from-sky-500 to-blue-700 rounded clear-right hidden relative pl-0 list-none left:-40% mb-0 text-left"
+                id="menus">
+                <li class="cursor-default text-center py-[15px] cursor-normal">
+                    <div class="font-bold">Joen The Goes</div>
+                    <div>Asistant Manager
+                        <div>
+                </li>
+                <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]">
+                    <i class="mx-4 fa fa-cog" aria-hidden="true"></i>Settings
+                </li>
+                <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]">
+                    <i class="mx-4 fa fa-envelope" aria-hidden="true"></i>Inbox
+                </li>
+                <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]">
+                    <i class="mx-4 fa fa-user" aria-hidden="true"></i>Profile
+                </li>
+                <li class="duration-500 ease-in-out hover:tracking-widest hover:bg-neutral-200 cursor-pointer break-all py-2 p-[5px]">
+                    <i class="mx-4 fa fa-lock" aria-hidden="true"></i>Logout
+                </li>
+            </ul>
         </a>
-      </div>
-      <div class="font-medium px-7 py-5" id="breadcumb"><a href="#" class="hover:tracking-wide">Home</a> \ <a href="#" class="hover:tracking-wide">Create</a></div>
-      <div class="container"></div>
     </div>
-    <script src="bundle.js"></script>
-  </body>
+    <div class="font-medium px-7 py-5" id="breadcumb"><a href="#" class="hover:tracking-wide">Home</a> \ <a href="#"
+                                                                                                            class="hover:tracking-wide">Create</a>
+    </div>
+    <div class="m-3">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="p-5">
+                <div class="mb-7 font-medium">Chart BAR</div>
+                <canvas id="myChart1" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-5">
+                <div class="mb-7 font-medium">Chart Bubble</div>
+                <canvas id="myChart2" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-12">
+                <div class="mb-7 font-medium">Chart Doughnut</div>
+                <canvas id="myChart3" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-12">
+                <div class="mb-7 font-medium">Chart Radar</div>
+                <canvas id="myChart4" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-5 col-span-2">
+                <iframe class="w-full" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=103.75762939453126%2C0.9144220047531721%2C104.22454833984376%2C1.2659203170470001&amp;layer=mapnik"
+                        style="border: 1px solid black"></iframe>
+                <br/><small><a href="https://www.openstreetmap.org/#map=11/1.0902/103.9911">View Larger Map</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bundle.js"></script>
+</body>
 </html>

@@ -64,24 +64,24 @@
     width: 25%;
 }
 
-.w-1\/12 div > span {
+.w-\[10\%\] div > span {
     display: none;
 }
 
-.w-1\/12 div > i.fa {
+.w-\[10\%\] div > i.fa {
     padding: 0px;
 }
 
-.w-1\/12 div {
+.w-\[10\%\] div {
     text-align: center;
     padding-left: 0px;
 }
 
-.w-1\/12 .menus > div {
+.w-\[10\%\] .menus > div {
     padding-right: 0px;
 }
 
-.w-1\/12 .menus > div:after {
+.w-\[10\%\] .menus > div:after {
     display: none;
 }
 
