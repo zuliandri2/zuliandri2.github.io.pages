@@ -1034,6 +1034,18 @@ video {
   }
 }
 
+#navigations-menus.w-\[15\%\],
+#navigations-menus.w-\[10\%\],
+#header-menu.w-\[85\%\],
+#header-menu.w-\[90\%\] {
+  transition: width .7s;
+}
+
+#side-content.ml-\[15\%\],
+#side-content.ml-\[10\%\] {
+  transition: margin-left .7s;
+}
+
 .after\:float-right::after {
   content: var(--tw-content);
   float: right;
