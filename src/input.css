@@ -64,7 +64,7 @@
     width: 25%;
 }
 
-.w-1\/12 div span {
+.w-1\/12 div > span {
     display: none;
 }
 
@@ -74,6 +74,15 @@
 
 .w-1\/12 div {
     text-align: center;
+    padding-left: 0px;
+}
+
+.w-1\/12 .menus > div {
+    padding-right: 0px;
+}
+
+.w-1\/12 .menus > div:after {
+    display: none;
 }
 
 .menus .menu-items {
