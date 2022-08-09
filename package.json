@@ -6,12 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "build-babel": "babel src -d lib"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
     "css-loader": "^6.7.1",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.1.7",
@@ -22,6 +26,8 @@
   "dependencies": {
     "chart.js": "^3.9.0",
     "lodash": "^4.17.21",
-    "mini-graph-card": "^0.2.1"
+    "mini-graph-card": "^0.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
