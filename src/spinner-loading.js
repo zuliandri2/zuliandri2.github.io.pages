@@ -41,4 +41,43 @@ class Path1 extends React.Component {
     }
 }
 
-export { SVG };
+function HideLoadingSpinner() {
+    const [hide, setHide] = setHide("");
+
+    return React.createElement(
+        'div',
+        { className: "fixed w-full h-full bg-sky-50 top-0 left-0 z-[9999] flex items-center justify-center " + hide},
+        React.createElement(SVG)
+    )
+}
+
+class LoadingSpinner extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { hide: "" };
+    }
+
+    setHidden() {
+        this.setState({hide: "hidden"});
+    }
+
+    componentDidMount() {
+        const methodHidden = (function () {
+            this.setHidden();
+        }).bind(this);
+        setTimeout(methodHidden, 100);
+        const body = document.querySelector("#body");
+        if (body.classList.contains("overflow-hidden")) body.classList.remove("overflow-hidden");
+    }
+
+    render() {
+        return React.createElement(
+            'div',
+            { className: "fixed w-full h-full bg-sky-50 top-0 left-0 z-[9999] flex items-center justify-center " + this.state.hide, id: "load-spinner" },
+            React.createElement(SVG)
+        )
+    }
+}
+
+export { LoadingSpinner };

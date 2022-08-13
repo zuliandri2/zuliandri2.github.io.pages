@@ -65,7 +65,7 @@ class CreateItemMenuUserContent extends React.Component {
     render() {
         return React.createElement(
             'a',
-            {className: "py-2 inline-block pl-4 w-full"},
+            { className: "py-2 inline-block pl-4 w-full", href: "./users.html" },
             React.createElement(CreateItemMenuUserImage),
             React.createElement(CreateItemMenuUserText)
         );

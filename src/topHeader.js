@@ -1,53 +1,18 @@
 "use strict";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import {navigationToggle} from "./navigationToggle";
 
 function ImageBtnToggleNaviagtion() {
-    const nav_menus = document.getElementById("navigations-menus"),
-        header_menu = document.getElementById("header-menu"),
-        side_content = document.getElementById("side-content");
-
-    const [toggle, setToggle] = useState(true);
-
-    useEffect(() => {
-        if (toggle) {
-            navToggleShow();
-        } else {
-            navToggleHide();
-        }
-    });
-
-    function navToggleHide() {
-        if (nav_menus.classList.contains("w-[15%]")) nav_menus.classList.remove("w-[15%]");
-        if (!nav_menus.classList.contains("w-[10%]")) nav_menus.classList.add("w-[10%]");
-        if (side_content.classList.contains("ml-[15%]")) side_content.classList.remove("ml-[15%]");
-        if (!side_content.classList.contains("ml-[10%]")) side_content.classList.add("ml-[10%]");
-        if (header_menu.classList.contains("w-[85%]")) header_menu.classList.remove("w-[85%]");
-        if (!header_menu.classList.contains("w-[90%]")) header_menu.classList.add("w-[90%]");
-    }
-
-    function navToggleShow() {
-        if (!nav_menus.classList.contains("w-[15%]")) nav_menus.classList.add("w-[15%]");
-        if (nav_menus.classList.contains("w-[10%]")) nav_menus.classList.remove("w-[10%]");
-        if (side_content.classList.contains("ml-[10%]")) side_content.classList.remove("ml-[10%]");
-        if (!side_content.classList.contains("ml-[15%]")) side_content.classList.add("ml-[15%]");
-        if (header_menu.classList.contains("w-[90%]")) header_menu.classList.remove("w-[90%]");
-        if (!header_menu.classList.contains("w-[85%]")) header_menu.classList.add("w-[85%]");
-    }
-
-    function isToggle() {
-        let t = true;
-        if (toggle) t = false;
-        setToggle(t);
-    }
+    const consumer = useContext(navigationToggle);
 
     return React.createElement(
-        'i',
+        "i",
         {
             className: "fa fa-bars fa-1x text-neutral-400 text-neutral-600 mt-2.5 mb-2.5",
             id: "toggle-btn-nav-menus",
-            onClick: isToggle
-        },
+            onClick: consumer.event
+        }
     );
 }
 
