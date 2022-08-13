@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body class="text-sm text-gray-700 overflow-hidden">
+<div id="load-spinner"></div>
+<div class="w-[15%] fixed top-0 left-0 h-full bg-gradient-to-r from-sky-500 to-blue-700 font-medium" id="navigations-menus"></div>
+<div class="ml-[15%] text-sky-500" id="side-content">
+    <div id="header-menu" class="top-0 fixed w-[85%] p-2.5 border-b-neutral-200 border-b-solid border-b-thin shadow-[10px_2px_10px_rgb(229,229,229)] bg-gradient-to-r from-sky-500 to-blue-700"></div>
+    <div class="font-medium px-7 py-5 mt-14" id="breadcumb"></div>
+    <div class="m-3">
+        <div class="">
+            <div class="p-5">
+                <div class="mb-7 font-medium">Tables</div>
+                <table id="example" class="table-auto w-full border-collapse border-gray-300 border border-solid text-slate-500">
+                    <thead class="bg-slate-300">
+                        <tr>
+                            <th class="p-4 sorting sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 131.167px;">Name</th>
+                            <th class="p-4 sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 218.167px;">Position</th>
+                            <th class="p-4 sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 96.9583px;">Office</th>
+                            <th class="p-4 sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 39.0208px;">Age</th>
+                            <th class="p-4 sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 85.5625px;">Start date</th>
+                            <th class="p-4 sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 73.2917px;">Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody class="hover:[&>tr]:bg-blue-50 even:[&>tr]:bg-slate-100 [&>tr>td]:p-2">
+                    <tr class="odd">
+                        <td class="sorting_1">Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>2008-11-28</td>
+                        <td>$162,700</td>
+                    </tr><tr class="even">
+                        <td class="sorting_1">Angelica Ramos</td>
+                        <td>Chief Executive Officer (CEO)</td>
+                        <td>London</td>
+                        <td>47</td>
+                        <td>2009-10-09</td>
+                        <td>$1,200,000</td>
+                    </tr><tr class="odd">
+                        <td class="sorting_1">Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009-01-12</td>
+                        <td>$86,000</td>
+                    </tr><tr class="even">
+                        <td class="sorting_1">Bradley Greer</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>41</td>
+                        <td>2012-10-13</td>
+                        <td>$132,000</td>
+                    </tr><tr class="odd">
+                        <td class="sorting_1">Brenden Wagner</td>
+                        <td>Software Engineer</td>
+                        <td>San Francisco</td>
+                        <td>28</td>
+                        <td>2011-06-07</td>
+                        <td>$206,850</td>
+                    </tr><tr class="even">
+                        <td class="sorting_1">Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2012-12-02</td>
+                        <td>$372,000</td>
+                    </tr><tr class="odd">
+                        <td class="sorting_1">Bruno Nash</td>
+                        <td>Software Engineer</td>
+                        <td>London</td>
+                        <td>38</td>
+                        <td>2011-05-03</td>
+                        <td>$163,500</td>
+                    </tr><tr class="even">
+                        <td class="sorting_1">Caesar Vance</td>
+                        <td>Pre-Sales Support</td>
+                        <td>New York</td>
+                        <td>21</td>
+                        <td>2011-12-12</td>
+                        <td>$106,450</td>
+                    </tr><tr class="odd">
+                        <td class="sorting_1">Cara Stevens</td>
+                        <td>Sales Assistant</td>
+                        <td>New York</td>
+                        <td>46</td>
+                        <td>2011-12-06</td>
+                        <td>$145,600</td>
+                    </tr><tr class="even">
+                        <td class="sorting_1">Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2012-03-29</td>
+                        <td>$433,060</td>
+                    </tr></tbody>
+                    <tfoot class="bg-slate-300 text-slate-500">
+                        <tr>
+                            <th class="p-4" rowspan="1" colspan="1">Name</th>
+                            <th class="p-4" rowspan="1" colspan="1">Position</th>
+                            <th class="p-4" rowspan="1" colspan="1">Office</th>
+                            <th class="p-4" rowspan="1" colspan="1">Age</th>
+                            <th class="p-4" rowspan="1" colspan="1">Start date</th>
+                            <th class="p-4" rowspan="1" colspan="1">Salary</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="p-5">
+                <div class="mb-7 font-medium">Chart Bubble</div>
+                <canvas id="myChart2" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-12">
+                <div class="mb-7 font-medium">Chart Doughnut</div>
+                <canvas id="myChart3" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-12">
+                <div class="mb-7 font-medium">Chart Radar</div>
+                <canvas id="myChart4" class="border-b-2 border-solid border-b-blue-400"></canvas>
+            </div>
+            <div class="p-5 col-span-2">
+                <iframe class="w-full" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=103.75762939453126%2C0.9144220047531721%2C104.22454833984376%2C1.2659203170470001&amp;layer=mapnik"
+                        style="border: 1px solid black"></iframe>
+                <br/><small><a href="https://www.openstreetmap.org/#map=11/1.0902/103.9911">View Larger Map</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
