@@ -27,10 +27,13 @@
   },
   "dependencies": {
     "chart.js": "^3.9.0",
+    "leaflet": "^1.8.0",
     "lodash": "^4.17.21",
     "mini-graph-card": "^0.2.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
+    "react-leaflet": "^4.0.1",
     "react-router-dom": "^6.3.0"
   }
 }

@@ -1,14 +1,33 @@
 import React from 'react';
-import {chart3} from "./chartStyles";
+import {Doughnut} from "react-chartjs-2";
+
 
 class CanvasChartDoughnut extends React.Component {
-
-    componentDidMount() {
-        chart3();
-    }
-
     render() {
-        return React.createElement('div', { id: "myChart3", className: "border-b-2 border-solid border-b-blue-400" })
+        return React.createElement(
+            Doughnut,
+            {
+                id: "myChart3",
+                className: "border-b-2 border-solid border-b-blue-400",
+                data: {
+                    labels: [
+                        'Red',
+                        'Blue',
+                        'Yellow'
+                    ],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [20, 10, 30],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                }
+            }
+        );
     }
 }
 

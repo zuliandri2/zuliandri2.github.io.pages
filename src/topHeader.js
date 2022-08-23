@@ -4,15 +4,19 @@ import React, { useState, useEffect, useContext } from 'react';
 import {navigationToggle} from "./navigationToggle";
 
 function ImageBtnToggleNaviagtion() {
-    const consumer = useContext(navigationToggle);
-
     return React.createElement(
-        "i",
-        {
-            className: "fa fa-bars fa-1x text-neutral-400 text-neutral-600 mt-2.5 mb-2.5",
-            id: "toggle-btn-nav-menus",
-            onClick: consumer.event
-        }
+        navigationToggle.Consumer,
+        null,
+        function ({action, toggle}) {
+            return React.createElement(
+                "i",
+                {
+                    className: "fa fa-bars fa-1x text-neutral-400 text-neutral-600 mt-2.5 mb-2.5",
+                    id: "toggle-btn-nav-menus",
+                    onClick: toggle,
+                }
+            );
+        },
     );
 }
 

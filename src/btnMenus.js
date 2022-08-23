@@ -1,12 +1,21 @@
 "use strict";
 
 import React from 'react';
+import {Link} from "react-router-dom";
+import {navigationToggle, toggleNavigation} from "./navigationToggle";
 
 class HomeImage extends React.Component {
     render() {
         return React.createElement(
-            'i',
-            {className: "fa fa-home fa-fw", "aria-hidden": true},
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-lg " : "";
+                return React.createElement(
+                    'i',
+                    {className: "fa fa-home fa-fw" + isHide, "aria-hidden": true},
+                );
+            }
         );
     }
 }
@@ -14,9 +23,16 @@ class HomeImage extends React.Component {
 class HomeText extends React.Component {
     render() {
         return React.createElement(
-            'span',
-            {className: "pl-3"},
-            'Home'
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " hidden " : "";
+                return React.createElement(
+                    'span',
+                    {className: "pl-3" + isHide},
+                    'Home'
+                );
+            }
         );
     }
 }
@@ -24,10 +40,17 @@ class HomeText extends React.Component {
 class HomeContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            {className: "py-2 inline-block pl-4 w-full", href: "./index.html"},
-            React.createElement(HomeImage, null),
-            React.createElement(HomeText, null),
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-center " : "";
+                return React.createElement(
+                    Link,
+                    { className: "py-2 inline-block px-4 w-full" + isHide, to: "/" },
+                    React.createElement(HomeImage, null),
+                    React.createElement(HomeText, null),
+                );
+            }
         );
     }
 }
@@ -35,8 +58,8 @@ class HomeContent extends React.Component {
 class HomeBox extends React.Component {
     render() {
         return React.createElement(
-            'div',
-            {className: "hover:bg-blue-100 hover:text-sky-500 menus cursor-pointer hover:tracking-widest duration-500 ease-in-out"},
+            "div",
+            { className: "menus hover:bg-blue-100 hover:text-sky-500 menus cursor-pointer hover:tracking-widest duration-500 ease-in-out" },
             React.createElement(HomeContent)
         );
     }
@@ -64,10 +87,17 @@ class CreateItemMenuUserText extends React.Component {
 class CreateItemMenuUserContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            { className: "py-2 inline-block pl-4 w-full", href: "./users.html" },
-            React.createElement(CreateItemMenuUserImage),
-            React.createElement(CreateItemMenuUserText)
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-sm " : "";
+                return React.createElement(
+                    Link,
+                    { className: "py-2 inline-block py-2 w-full" + isHide, to: "/user/create" },
+                    React.createElement(CreateItemMenuUserImage),
+                    React.createElement(CreateItemMenuUserText)
+                );
+            }
         );
     }
 }
@@ -76,7 +106,7 @@ class CreateItemMenuUserBox extends React.Component {
     render() {
         return React.createElement(
             'div',
-            {className: "text-gray-700 hover:bg-blue-100 hover:text-sky-500 cursor-pointer break-all px-5 py-2 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out"},
+            {className: "text-gray-700 hover:bg-blue-100 hover:text-sky-500 cursor-pointer break-all px-5 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out"},
             React.createElement(CreateItemMenuUserContent)
         );
     }
@@ -104,8 +134,8 @@ class EditItemMenuUserText extends React.Component {
 class EditItemMenuUserContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            {className: "py-2 inline-block pl-4 w-full"},
+            Link,
+            {className: "py-2 inline-block py-2 w-full", to: "/user/edit"},
             React.createElement(EditItemMenuUserImage),
             React.createElement(EditItemMenuUserText)
         );
@@ -116,7 +146,7 @@ class EditItemMenuUserBox extends React.Component {
     render() {
         return React.createElement(
             'div',
-            {className: "text-gray-700 hover:bg-blue-100 hover:text-sky-500 cursor-pointer break-all px-5 py-2 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out"},
+            {className: "text-gray-700 hover:bg-blue-100 hover:text-sky-500 cursor-pointer break-all px-5 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out"},
             React.createElement(EditItemMenuUserContent)
         );
     }
@@ -144,8 +174,8 @@ class DeleteItemMenuUserText extends React.Component {
 class DeleteItemMenuUserContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            {className: "py-2 inline-block pl-4 w-full"},
+            Link,
+            {className: "py-2 inline-block py-2 w-full", to: "/user/delete"},
             React.createElement(DeleteItemMenuUserImage),
             React.createElement(DeleteItemMenuUserText)
         );
@@ -156,7 +186,7 @@ class DeleteItemMenuUserBox extends React.Component {
     render() {
         return React.createElement(
             'div',
-            {className: "text-gray-700 hover:bg-blue-100 hover:text-sky-500 cursor-pointer break-all px-5 py-2 rounded-tr hover:tracking-widest tracking-normal duration-500 ease-in-out"},
+            {className: "text-gray-700 hover:bg-blue-100 hover:text-sky-500 cursor-pointer break-all px-5 hover:tracking-widest tracking-normal duration-500 ease-in-out rounded-br"},
             React.createElement(DeleteItemMenuUserContent)
         );
     }
@@ -205,14 +235,27 @@ class ContentItemMenuUsers extends React.Component {
 }
 
 class BoxItemMenuUser extends React.Component {
-    render() { return React.createElement('div', {className: "fixed menu-items"}, React.createElement(ContentItemMenuUsers)); }
+    render() {
+        return React.createElement(
+            'div',
+            {className: "fixed menu-items"},
+            React.createElement(ContentItemMenuUsers)
+        );
+    }
 }
 
 class UsersImage extends React.Component {
     render() {
         return React.createElement(
-            'i',
-            {className: "fa fa-users fa-fw", "aria-hidden": true},
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-lg " : "";
+                return React.createElement(
+                    'i',
+                    {className: "fa fa-users fa-fw" + isHide, "aria-hidden": true},
+                );
+            }
         );
     }
 }
@@ -220,9 +263,16 @@ class UsersImage extends React.Component {
 class UsersText extends React.Component {
     render() {
         return React.createElement(
-            'span',
-            {className: "pl-3"},
-            'Users'
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " hidden " : "";
+                return React.createElement(
+                    'span',
+                    {className: "pl-3" + isHide},
+                    'Users'
+                );
+            }
         );
     }
 }
@@ -230,10 +280,17 @@ class UsersText extends React.Component {
 class UsersContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            {className: "py-2 inline-block pl-4 w-full"},
-            React.createElement(UsersImage),
-            React.createElement(UsersText),
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-center " : "";
+                return React.createElement(
+                    "a",
+                    { className: "py-2 inline-block px-4 w-full" + isHide},
+                    React.createElement(UsersImage),
+                    React.createElement(UsersText),
+                );
+            }
         );
     }
 }
@@ -252,8 +309,15 @@ class UsersBox extends React.Component {
 class TablesImage extends React.Component {
     render() {
         return React.createElement(
-            'i',
-            {className: "fa fa-map-marker fa-fw", "aria-hidden": true},
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-lg " : "";
+                return React.createElement(
+                    'i',
+                    {className: "fa fa-map-marker fa-fw" + isHide, "aria-hidden": true},
+                );
+            }
         );
     }
 }
@@ -261,9 +325,16 @@ class TablesImage extends React.Component {
 class TablesText extends React.Component {
     render() {
         return React.createElement(
-            'span',
-            {className: "pl-3"},
-            'Tables'
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " hidden " : "";
+                return React.createElement(
+                    'span',
+                    {className: "pl-3" + isHide},
+                    'Tables'
+                );
+            }
         );
     }
 }
@@ -271,10 +342,17 @@ class TablesText extends React.Component {
 class TablesContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            {className: "py-2 inline-block pl-4 w-full", href: "./tables.html"},
-            React.createElement(TablesImage),
-            React.createElement(TablesText),
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-center " : "";
+                return React.createElement(
+                    Link,
+                    {to: "/table", className: "py-2 inline-block px-4 w-full" + isHide, href: "./tables.html"},
+                    React.createElement(TablesImage),
+                    React.createElement(TablesText),
+                );
+            }
         );
     }
 }
@@ -282,7 +360,7 @@ class TablesContent extends React.Component {
 class TablesBox extends React.Component {
     render() {
         return React.createElement(
-            'div',
+            "div",
             {className: "hover:bg-blue-100 hover:text-sky-500 menus cursor-pointer hover:tracking-widest duration-500 ease-in-out"},
             React.createElement(TablesContent)
         );
@@ -292,8 +370,15 @@ class TablesBox extends React.Component {
 class FontAwesomeImage extends React.Component {
     render() {
         return React.createElement(
-            'i',
-            {className: "fa fa-font-awesome fa-fw", "aria-hidden": true},
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-lg " : "";
+                return React.createElement(
+                    'i',
+                    {className: "fa fa-font-awesome fa-fw" + isHide, "aria-hidden": true},
+                );
+            }
         );
     }
 }
@@ -301,9 +386,16 @@ class FontAwesomeImage extends React.Component {
 class FontAwesomeText extends React.Component {
     render() {
         return React.createElement(
-            'span',
-            {className: "pl-3"},
-            'Font Awesome'
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " hidden " : "";
+                return React.createElement(
+                    'span',
+                    {className: "pl-3" + isHide},
+                    'Font Awesome'
+                );
+            }
         );
     }
 }
@@ -311,10 +403,17 @@ class FontAwesomeText extends React.Component {
 class FontAwesomeContent extends React.Component {
     render() {
         return React.createElement(
-            'a',
-            {className: "py-2 inline-block pl-4 w-full"},
-            React.createElement(FontAwesomeImage),
-            React.createElement(FontAwesomeText),
+            navigationToggle.Consumer,
+            null,
+            function ({action, toggle}) {
+                const isHide = toggleNavigation.hide === action ? " text-center " : "";
+                return React.createElement(
+                    Link,
+                    {to: "/font-awesome", className: "py-2 inline-block px-4 w-full" + isHide},
+                    React.createElement(FontAwesomeImage),
+                    React.createElement(FontAwesomeText),
+                );
+            }
         );
     }
 }

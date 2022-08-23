@@ -4,7 +4,6 @@ import Logo from "./logo";
 import {FontAwesomeBox, HomeBox, TablesBox, UsersBox} from "./btnMenus";
 import ReactDom from "react-dom/client";
 import {BtnToggleNaviagtion, InfoAccountBtn} from "./topHeader";
-import {chart1, chart2, chart3, chart4} from "./chartStyles";
 import {CreateHomeBreadcrumbs, HomeBreadcrumbs, TablesBreadcrumbs} from "./breadcumb";
 
 (function () {

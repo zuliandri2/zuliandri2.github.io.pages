@@ -1,47 +1,58 @@
 "use strict";
 
 import React from 'react';
+import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
 
 
 class LinkTitle extends React.Component {
     render() {
         return React.createElement(
-            "a",
-            { href: "https://www.openstreetmap.org/#map=11/1.0902/103.9911" },
-            "View Larger Map"
+            TileLayer,
+            {
+                attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',
+                url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            }
         );
     }
 }
 
 class ContentTitle extends React.Component {
     render() {
-        return React.createElement("div", null, React.createElement(LinkTitle));
-    }
-}
-
-class MapNewLine extends React.Component {
-    render() {
-        // return()
-    }
-}
-
-/*class IframeMap extends React.Component {
-    render() {
         return React.createElement(
-            'iframe',
+            MapContainer,
             {
-                    className: "w-full",
-                    height : "350",
-                    frameBorder : "0",
-                    scrolling : "no",
-                    marginHeight : "0",
-                    marginWidth : "0",
-                    style: "border: 1px solid black",
-                    src: "https://www.openstreetmap.org/export/embed.html?bbox=103.75762939453126%2C0.9144220047531721%2C104.22454833984376%2C1.2659203170470001&amp;layer=mapnik"
-                }
+                center: [-6.194416, 106.933269],
+                zoom: 13,
+                scrollWheelZoom: false,
+                className: "h-80 z-[-1]",
+            },
+            React.createElement(LinkTitle),
+            React.createElement(MarkerContent)
         );
     }
-}*/
+}
+
+class MarkerContent extends React.Component {
+    render() {
+        return React.createElement(
+            Marker,
+            {
+                position: [1.079761, 104.027999]
+            },
+            React.createElement(PopUpContent)
+        );
+    }
+}
+
+class PopUpContent extends React.Component{
+    render() {
+        return React.createElement(
+            Popup,
+            null,
+            "A pretty CSS3 popup. <br /> easily costumable."
+        );
+    }
+}
 
 class MapContent extends React.Component {
     render() {

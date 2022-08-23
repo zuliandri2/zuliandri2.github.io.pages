@@ -3,14 +3,12 @@ const path = require('path');
 
 module.exports = {
     mode: "development",
-    entry: {
-        home: {import: "/src/home.js", filename: "home.js"},
-        tables: {import: "/src/tables.js", filename: "tables.js"},
-    },
+    entry: "/src/app.js",
     devServer: {
         static: './dist',
         hot: true,
-        port: 3000
+        port: 3000,
+        historyApiFallback: true
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -29,15 +27,7 @@ module.exports = {
             title: "Home",
             filename: "index.html",
             template: "src/templates/home/index.html",
-            inject: 'body',
-            chunks: ["home"]
-        }),
-        new HtmlWebpackPlugin({
-            chunks: ["tables"],
-            title: "Table",
-            filename: "tables.html",
-            template: "src/templates/tables/tables.html",
-            inject: 'body',
+            inject: 'body'
         })
     ]
 };
